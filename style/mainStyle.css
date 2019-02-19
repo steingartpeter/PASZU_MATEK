@@ -1,6 +1,85 @@
 body{
     background-color:#CDCDCD;
+    background:linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+    min-height: 850px;
+    background-repeat: no-repeat;
 }
 main.down-80px{
     margin-top:80px;
+    width:80%;
+}
+.container{
+    max-width:85%;
+}
+.log-btn{
+    margin:3px;
+}
+.ajx-error{
+    margin:5px;
+    background-color:#FF9999;
+    color:#662525;
+    border:#AA0000 3px solid;
+    border-radius:6px;
+    padding-top:8px;
+    padding-bottom:8px;
+    box-shadow:4px 4px 8px #501515;
+}
+.usr-prfl-card{
+    box-shadow:4px 4px 6px #050505;
+    border:1px solid #F5F5FF;
+    width: 15rem;
+    height:26rem;
+}
+.img-container{
+    width:640px;
+    height:480px;
+    border:2px solid #050505;
+    background-image:url('/PASZU_MATEK/media/pics/excecses/kepfelfedo/kep01.jpg');
+}
+div.cover{
+    background-color:#FFFF00;
+    opacity:1;
+    float:left;
+    display:inline;
+    border:1px solid #050505;
+    width:127px;
+    height:95px;
+}
+.feladat-row{
+    margin-top:12px;
+    background-color:#4545AA;
+    color:#8888FF;
+    padding:12px;
+    border:4px solid #353599;
+    border-radius:8px;
+    box-shadow: #050505 4px 6px 10px;
+}
+#kpflfd-fldat{
+    text-align: center;
+    font-size: 36px;
+    color: #FAFAFF;
+    font-weight: bold;
+}
+#kpftlt-go{
+    margin:4px;
+    margin-left:8px;
+    margin-right:8px;
+}
+#kpflfd-fldat input[type=number]{
+    width:80px;
+    font-size:24px;
+}
+.svg-icon{
+    width: 16px;
+    height: 16px;
+}
+.ERRMsg{
+    width:385px;
+    font-size:18px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color:#FFA0A0;
+    color:#FF2020;
+    border:2px solid #AA0505;
+    box-shadow:3px 3px 6px #990505;
 }
