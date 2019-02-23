@@ -56,6 +56,8 @@
         $prcId = $_REQUEST['PRC_ID'];
         if($prcId == 'TST_AJAX_CALL'){
             hndl_testRequest();
+        }elseif($prcId == 'getSession'){
+            hndl_getSession();
         }else{
             $retArr = array();
             $retArr['FLAG'] = 'NOK';
@@ -91,6 +93,14 @@
         //</SF>
 
 
+    }
+
+    function hndl_getSession(){
+        //<SF>
+        //LÉTREHOZVA: 2019-02-23<br/>
+        //SZERZÓ: AX07057<br/>
+        //LEÍRÁS: A SESSION elemek kiadása a javascriptnek.<br/>
+        //</SF>
     }
 
 ?>

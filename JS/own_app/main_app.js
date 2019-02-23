@@ -192,3 +192,44 @@ PM_JS_APP.chckKpflfdResult = function(){
     console.log('A valós eredmény:'+res);
     
 }
+
+PM_JS_APP.getSessionData(elemntNm){
+    //<SF>
+    //LÉTREHOZVA: 2019-02-22<br/>
+    //SZERZÓ: AX07057<br/>
+    //LEÍRÁS: A PHP session egyes elemeinek lekérdezése<br/>
+    //PARAMÉTEREK<br>
+    //×-
+    // @-- elemntNm = a keresett elem neve. -@
+    // @-- list item 02 -@
+    // @-- list item 03 -@
+    //-×
+    //</SF>
+
+    var data = {'PRC_ID':'getSession','sessElmnt':'FULL'};
+
+    $.ajax({
+        type:"POST",
+        url:"/PASZU_MATEK/php/scripts/AJAX_HELPER.php",
+        data:data,
+        success:function(rsp){
+            console.log("data: ", rsp);
+            var rspns = (JSON.parse(rsp));
+            if(rspns.FLAG != 'OK'){
+                var m = $('main');
+                var d = '<div class="row"><div class="col-md-6 ajx-error"><h3>AJAX HIBA!</h3>';
+                $.each(rspns, function(key, value){
+                    d += '<b><u>'+key + '</u></b> : ' + value +'<br>';
+                });
+                d += '</div></div>';
+                m.append(d);
+            }
+        },
+        error:function(){
+            console.log("AJAX hiba:");
+        },
+        complete:function(){
+            console.log("AJAX COMPLETE:");
+        }
+    });
+}
