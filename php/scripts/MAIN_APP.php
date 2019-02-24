@@ -74,6 +74,7 @@ class MAIN_APP{
             <script src="/PASZU_MATEK/JS/jQuery/jquery331.js"></script>
             <script src="/PASZU_MATEK/JS/popper/popper.js"></script>
             <script src="/PASZU_MATEK/JS/bootstrap421/js/bootstrap.js"></script>
+            <script src="/PASZU_MATEK/JS/own_app/js_consts.js"></script>
             <script src="/PASZU_MATEK/JS/own_app/main_app.js"></script>
         
             <title>'.$mnTTl.'</title>

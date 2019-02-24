@@ -39,31 +39,31 @@
         </div>
         <div class="col-md-8">
             <div class="img-container">
-                <div class="cover" id="cover-0101" onclick="f(this)"></div>
-                <div class="cover" id="cover-0102" onclick="f(this)"></div>
-                <div class="cover" id="cover-0103" onclick="f(this)"></div>
-                <div class="cover" id="cover-0104" onclick="f(this)"></div>
-                <div class="cover" id="cover-0105" onclick="f(this)"></div>
-                <div class="cover" id="cover-0201" onclick="f(this)"></div>
-                <div class="cover" id="cover-0202" onclick="f(this)"></div>
-                <div class="cover" id="cover-0203" onclick="f(this)"></div>
-                <div class="cover" id="cover-0204" onclick="f(this)"></div>
-                <div class="cover" id="cover-0205" onclick="f(this)"></div>
-                <div class="cover" id="cover-0301" onclick="f(this)"></div>
-                <div class="cover" id="cover-0302" onclick="f(this)"></div>
-                <div class="cover" id="cover-0303" onclick="f(this)"></div>
-                <div class="cover" id="cover-0304" onclick="f(this)"></div>
-                <div class="cover" id="cover-0305" onclick="f(this)"></div>
-                <div class="cover" id="cover-0401" onclick="f(this)"></div>
-                <div class="cover" id="cover-0402" onclick="f(this)"></div>
-                <div class="cover" id="cover-0403" onclick="f(this)"></div>
-                <div class="cover" id="cover-0404" onclick="f(this)"></div>
-                <div class="cover" id="cover-0405" onclick="f(this)"></div>
-                <div class="cover" id="cover-0501" onclick="f(this)"></div>
-                <div class="cover" id="cover-0502" onclick="f(this)"></div>
-                <div class="cover" id="cover-0503" onclick="f(this)"></div>
-                <div class="cover" id="cover-0504" onclick="f(this)"></div>
-                <div class="cover" id="cover-0505" onclick="f(this)"></div>
+                <div class="cover" id="cover-0101" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0102" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0103" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0104" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0105" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0201" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0202" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0203" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0204" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0205" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0301" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0302" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0303" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0304" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0305" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0401" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0402" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0403" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0404" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0405" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0501" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0502" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0503" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0504" onclick="PM_JS_APP.removeOneCover(this)"></div>
+                <div class="cover" id="cover-0505" onclick="PM_JS_APP.removeOneCover(this)"></div>
             </div>
         </div>
     </div>

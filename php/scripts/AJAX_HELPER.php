@@ -21,6 +21,7 @@
 //-×
 //</M>
 
+    session_start();
     require_once($_SERVER['DOCUMENT_ROOT'].'/PASZU_MATEK/php/scripts/DB_HANDLER.php');
 
     if(strpos(array_keys($_REQUEST)[0],'":"') > 0){
@@ -91,8 +92,10 @@
         // @-- ... -@
         //-×
         //</SF>
-
-
+        $retArr = array();
+        $retArr['FLAG']  = 'NOK';
+        $retArr['MSG'] = 'Nem érkezett, vagy üres PROC_ID érkezett, a kérést nem lehet feldogozni!';
+        echo json_encode($_SESSION,JSON_UNESCAPED_UNICODE);
     }
 
     function hndl_getSession(){
@@ -101,6 +104,12 @@
         //SZERZÓ: AX07057<br/>
         //LEÍRÁS: A SESSION elemek kiadása a javascriptnek.<br/>
         //</SF>
+        $retArr = array();
+        $retArr['FLAG']  = 'OK';
+        $retArr['MSG'] = 'A SESSION eleme.';
+        $retArr['DATA'] = $_SESSION;
+        echo json_encode($retArr,JSON_UNESCAPED_UNICODE);
+
     }
 
 ?>

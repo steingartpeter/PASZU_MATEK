@@ -172,28 +172,65 @@ PM_JS_APP.chckKpflfdResult = function(){
     var expRes = '';
     var res = $('#eredmeny').val();
 
+    //<nn>
+    // Ha volt korábbi eredmény, akkor azt kitöröljük.
+    //</nn>
+    $("#resCntnr").html('');
+
     if(res == ''){
+        //<nn>
+        // Ha a koma nem írt be eredményt, akkor ráugrik a zsaru.
+        // Öszeállítjuk a HTML figyelmeztetést, és megjelenítjük.
+        //</nn>
         var html = '<p class="ERRMsg">'
         html +='<img src="/PASZU_MATEK/media/pics/UI/angry_cop.jpg" alt="EJNYE, EJYNE..."><br>';
         html += 'De hiszen üres az eredmény mező, ez biztos nem jó!</p>';
         $("#resCntnr").append(html);
-    }
-
-    if(op === '+'){
-        expRes = x+y;
-    }else if(op === '-'){
-        expRes = x-y;
     }else{
-        console.error('Ismeretlen opreandus: ' + op);
+        if(op === '+'){
+            expRes = x+y;
+        }else if(op === '-'){
+            expRes = x-y;
+        }else{
+            console.error('Ismeretlen opreandus: ' + op);
+        }
+    
+        console.log('Operandus A: ', x, ', operandusB:',y);
+        console.log('A várt eredmény pedig: '+expRes);
+        console.log('A valós eredmény:'+res);
+        //<nn>
+        // Egy IF szerkezettel megvizsgáljuk, és kezeljük az eredményt, vagy hibát
+        //</nn>
+        if(expRes == res){
+            //<nn>
+            // Na, az eredmény jó.. kéne pár dolgot csinálni...
+            //×-
+            // @-- a javascript konstansok frissítése -@
+            // @-- adatbázis siker beszúrás -@
+            // @-- a cover-ek átszínezése, zöldre=levehető -@
+            // @-- ... -@
+            //-×
+            //</nn>
+            PM_JS_APP.CONSTS.NUMERICS.NR_OF_NON_OPCTY_COVER--;
+            PM_JS_APP.CONSTS.NUMERICS.NR_OF_OPCTY_COVER++;
+            PM_JS_APP.CONSTS.NUMERICS.NR_OF_PSBL_CLEAR_COVER = 1;
+            $(".cover").css({
+                "background-color":PM_JS_APP.CONSTS.COLORS.UI.FELFED_UNLCKD
+            });
+
+        }else{
+            var html = '<p class="ERRMsg">'
+            html +='<img src="/PASZU_MATEK/media/pics/UI/error.jpg" alt="HIBA :("><br>';
+            html += 'Nos, ez nem az igaz, számold át még egyszer!</p>';
+            $("#resCntnr").append(html); 
+        }
     }
 
-    console.log('Operandus A: ', x, ', operandusB:',y);
-    console.log('A várt eredmény pedig: '+expRes);
-    console.log('A valós eredmény:'+res);
+    
     
 }
 
-PM_JS_APP.getSessionData(elemntNm){
+PM_JS_APP.getSessionData = function(elemntNm){
     //<SF>
     //LÉTREHOZVA: 2019-02-22<br/>
     //SZERZÓ: AX07057<br/>
@@ -223,6 +260,12 @@ PM_JS_APP.getSessionData(elemntNm){
                 });
                 d += '</div></div>';
                 m.append(d);
+            }else{
+                if(rspns.MSG !== undefined){
+                    console.log('Ajax válasz: ',rspns.MSG);
+                }else{
+                    console.error('AJJAJJ, MÉG VÁLASZ SINCS!!!');
+                }
             }
         },
         error:function(){
@@ -232,4 +275,34 @@ PM_JS_APP.getSessionData(elemntNm){
             console.log("AJAX COMPLETE:");
         }
     });
+}
+
+PM_JS_APP.removeOneCover = function(t){
+    //<SF>
+    //LÉTREHOZVA: 2019-02-24<br/>
+    //SZERZÓ: AX07057<br/>
+    //LEÍRÁS: A kattintott DIV elem opacitiét lenullázzuk.<br/>
+    //</SF>
+
+    //<DEBUG>
+    // A THIS vizsgálata:
+    //<code>
+    // console.info("Na, akkor ezt eltüntetjük....");
+    // console.info("this:", t);
+    //</code>
+    //</DEBUG>
+    
+    if(PM_JS_APP.CONSTS.NUMERICS.NR_OF_PSBL_CLEAR_COVER > 0){
+        $(t).css({
+            'opacity':0
+        });
+        PM_JS_APP.CONSTS.NUMERICS.NR_OF_PSBL_CLEAR_COVER = 0;
+        $(".cover").css({
+            "background-color":PM_JS_APP.CONSTS.COLORS.UI.FELFED_LCKD
+        });
+        $("#operandA").text(PM_JS_APP.genRndInt());
+        $("#operandB").text(PM_JS_APP.genRndInt());
+        $("#eredmeny").val('');
+    }
+    
 }
