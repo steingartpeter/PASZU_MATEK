@@ -23,7 +23,7 @@
 
     define("DBHOST","localhost");
     define("DBUSER","ax07057");
-    define("DBPASS","an770499");
+    define("DBPASS","151603mb");
     define("DBNAME","matekgyak");
 
 

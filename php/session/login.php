@@ -32,7 +32,8 @@
     //</code>
     //</DEBUG>
     
-
+    //echo '<p>sha1(a003722) = '.strtoupper(sha1("an003722")).'</p>';
+    //DIE();
     $pgGnrtr = new MAIN_APP();
     $html = '';
     echo $pgGnrtr->generateBasicSiteHeader("LOGIN");
